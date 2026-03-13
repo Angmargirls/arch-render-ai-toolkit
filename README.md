@@ -9,15 +9,21 @@ Current architectural rendering workflows are often fragmented. This toolkit pro
 * Generate consistent material and lighting prompts based on architectural styles.
 * Automate batch rendering for design iterations.
 
-### Roadmap (Current Progress)
-- [x] Initial Project Structure
-- [ ] IFC Data Extraction Module (In Development)
-- [ ] AI Prompt Optimization Engine
-- [ ] Integration with Stable Diffusion / ControlNet APIs
+### 🚀 Roadmap & Development Plan
+- [x] Initial Project Structure and Repository Setup
+- [ ] **Phase 1: Metadata Extraction**
+    - Integrate `IfcOpenShell` to parse spatial relationships from BIM files.
+    - Develop a Python CLI for basic geometry analysis.
+- [ ] **Phase 2: AI Integration (Powered by Codex)**
+    - Implement the Codex-driven prompt generation engine.
+    - Automated style translation (e.g., converting "Concrete Minimalism" to optimized Stable Diffusion tags).
+- [ ] **Phase 3: Security & Optimization**
+    - Use Codex Security for automated vulnerability scanning in data pipelines.
+    - Performance optimization for large-scale 3D models.
 
 ### Tech Stack
 * **Language:** Python
-* **AI Integration:** OpenAI Codex (for logic automation), Stable Diffusion
+* **AI Integration:** OpenAI Codex, Stable Diffusion
 * **Libraries:** PyVista, IfcOpenShell
 
 ### How to Contribute
