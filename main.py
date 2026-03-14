@@ -1,25 +1,58 @@
-# Arch-Render AI Toolkit Initial Structure
-# This module handles the core logic for architectural metadata extraction.
+import json
 
-def process_bim_metadata(file_path):
+class ArchAIEngine:
     """
-    Placeholder for processing architectural geometry files (IFC, OBJ).
-    In the future, this will extract spatial relationships to guide AI rendering.
+    Core engine to bridge Architectural BIM data and AI Generative Prompts.
     """
-    print(f"Extracting metadata from: {file_path}")
-    # We plan to use Codex to automate the conversion of BIM data to prompts.
-    return {"status": "success", "data": "spatial_nodes"}
+    def __init__(self, project_name):
+        self.project_name = project_name
+        self.supported_styles = ["Modernism", "Brutalism", "Scandinavian", "Industrial"]
 
-def generate_ai_render_config(extracted_data):
-    """
-    Converts extracted spatial data into optimized parameters for diffusion models.
-    """
-    prompt = f"Highly detailed architectural render, focusing on {extracted_data}"
-    return prompt
+    def extract_bim_metadata(self, file_path):
+        """
+        Simulates parsing an IFC or OBJ file to extract spatial relationships.
+        In a real scenario, this would use IfcOpenShell.
+        """
+        print(f"[LOG] Parsing architectural file: {file_path}")
+        # Simulated metadata output
+        metadata = {
+            "wall_material": "Exposed Concrete",
+            "glazing_ratio": 0.45,
+            "ceiling_height": "3.5m",
+            "environment": "Urban Forest"
+        }
+        return metadata
+
+    def generate_advanced_prompt(self, metadata, style="Modernism"):
+        """
+        Converts BIM metadata into high-fidelity AI rendering prompts.
+        We plan to utilize OpenAI Codex to optimize this mapping logic.
+        """
+        if style not in self.supported_styles:
+            style = "Modernism"
+            
+        base_prompt = f"Architectural photography of a {style} building. "
+        detail_prompt = f"Features {metadata['wall_material']} textures, {metadata['glazing_ratio']*100}% glass facade, "
+        env_prompt = f"set in a {metadata['environment']} at golden hour, cinematic lighting, 8k resolution."
+        
+        full_prompt = base_prompt + detail_prompt + env_prompt
+        return full_prompt
+
+    def run_pipeline(self, ifc_file):
+        """Execute the full translation pipeline."""
+        print(f"--- Starting Pipeline for {self.project_name} ---")
+        metadata = self.extract_bim_metadata(ifc_file)
+        prompt = self.generate_advanced_prompt(metadata)
+        
+        results = {
+            "source_file": ifc_file,
+            "generated_prompt": prompt,
+            "status": "Ready for Diffusion Model"
+        }
+        print(json.dumps(results, indent=4))
+        return results
 
 if __name__ == "__main__":
-    print("Arch-Render AI Toolkit Initializing...")
-    # Example execution
-    test_file = "model_house_v1.ifc"
-    metadata = process_bim_metadata(test_file)
-    print(f"Generated Prompt Strategy: {generate_ai_render_config(metadata)}")
+    # Test execution
+    engine = ArchAIEngine("Arch-Render-Project-V1")
+    engine.run_pipeline("sample_villa_model.ifc")
