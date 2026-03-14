@@ -1,3 +1,6 @@
+> 📢 **Join our [Project Discussion](https://github.com/Angmargirls/arch-render-ai-toolkit/discussions/1) to learn more about our long-term vision!**
+
+---
 # Arch-Render AI Toolkit 🏗️🎨
 
 ### Project Overview
