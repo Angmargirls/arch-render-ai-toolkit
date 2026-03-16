@@ -1,33 +1,34 @@
+# Arch-Render AI Toolkit 🏗️🎨
+
 > 📢 **Join our [Project Discussion](https://github.com/Angmargirls/arch-render-ai-toolkit/discussions/1) to learn more about our long-term vision!**
 
 ---
-# Arch-Render AI Toolkit 🏗️🎨
 
-### Project Overview
-This project aims to bridge the gap between traditional architectural design (BIM/CAD) and generative AI rendering workflows. We are building an open-source middleware that automates the conversion of 3D geometry metadata into optimized prompts and control maps for AI diffusion models.
+### 🌟 Project Overview
+**Arch-Render AI Toolkit** is an open-source middleware designed to bridge the gap between traditional architectural design (BIM/CAD) and generative AI rendering workflows. 
 
-### Why This Project?
-Current architectural rendering workflows are often fragmented. This toolkit provides a unified API and CLI to:
-* Extract spatial data from IFC/OBJ files.
-* Generate consistent material and lighting prompts based on architectural styles.
-* Automate batch rendering for design iterations.
+We are building a logic-driven engine that extracts spatial relationships and material metadata from architectural files (like IFC) and translates them into high-fidelity, structurally accurate prompts for AI diffusion models.
 
-### 🚀 Roadmap & Development Plan
-- [x] Initial Project Structure and Repository Setup
-- [ ] **Phase 1: Metadata Extraction**
-    - Integrate `IfcOpenShell` to parse spatial relationships from BIM files.
-    - Develop a Python CLI for basic geometry analysis.
-- [ ] **Phase 2: AI Integration (Powered by Codex)**
-    - Implement the Codex-driven prompt generation engine.
-    - Automated style translation (e.g., converting "Concrete Minimalism" to optimized Stable Diffusion tags).
-- [ ] **Phase 3: Security & Optimization**
-    - Use Codex Security for automated vulnerability scanning in data pipelines.
-    - Performance optimization for large-scale 3D models.
+### ✨ Key Features
+* **BIM Metadata Extraction**: Automated parsing of IFC/OBJ files to identify wall materials, glazing ratios, and spatial context.
+* **AI Prompt Engineering**: Using LLMs to convert raw technical data into cinematic architectural photography prompts.
+* **Consistency Control**: Ensuring that AI-generated visuals respect the original design intent and structural logic.
 
-### Tech Stack
-* **Language:** Python
-* **AI Integration:** OpenAI Codex, Stable Diffusion
-* **Libraries:** PyVista, IfcOpenShell
+### 🚀 Roadmap & Status
+- [x] **Project Scaffolding**: Repository initialized and community discussion opened.
+- [x] **Core Architecture (Mar 15)**: Implemented modular logic for `MetadataParser` and `PromptEngine`.
+- [ ] **Phase 1: API Integration**: Connect OpenAI Codex/GPT-4 to automate linguistic optimization of prompts. (Awaiting Grant)
+- [ ] **Phase 2: Geometry Engine**: Deep integration with `ifcopenshell` for real-time 3D geometry analysis.
+- [ ] **Phase 3: CLI Tooling**: Release a command-line interface for architects to batch-process rendering strategies.
 
-### How to Contribute
-We welcome architects, developers, and AI enthusiasts! Please check our [Issues] page for tasks.
+### 🛠️ Tech Stack
+* **Language**: Python 3.9+
+* **BIM Processing**: `ifcopenshell`, `pyvista`
+* **AI Integration**: OpenAI Codex / GPT-4 API
+* **Format Support**: IFC, OBJ, JSON
+
+### 🤝 Contributing
+We welcome architects, developers, and AI enthusiasts to contribute. Please check the **Discussions** tab to share your ideas or report issues.
+
+---
+*Developed with passion for the future of AEC (Architecture, Engineering, and Construction).*
