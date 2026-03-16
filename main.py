@@ -1,58 +1,50 @@
+import os
 import json
 
-class ArchAIEngine:
-    """
-    Core engine to bridge Architectural BIM data and AI Generative Prompts.
-    """
-    def __init__(self, project_name):
-        self.project_name = project_name
-        self.supported_styles = ["Modernism", "Brutalism", "Scandinavian", "Industrial"]
+class MetadataParser:
+    """处理建筑 BIM/IFC 文件的空间数据提取逻辑"""
+    def __init__(self, file_path):
+        self.file_path = file_path
 
-    def extract_bim_metadata(self, file_path):
-        """
-        Simulates parsing an IFC or OBJ file to extract spatial relationships.
-        In a real scenario, this would use IfcOpenShell.
-        """
-        print(f"[LOG] Parsing architectural file: {file_path}")
-        # Simulated metadata output
-        metadata = {
-            "wall_material": "Exposed Concrete",
-            "glazing_ratio": 0.45,
-            "ceiling_height": "3.5m",
-            "environment": "Urban Forest"
+    def get_structural_data(self):
+        # 生产环境中将调用 ifcopenshell 解析真实的几何数据
+        # 目前为模拟架构展示逻辑
+        return {
+            "wall_material": "Fair-faced concrete (清水混凝土)",
+            "glazing_type": "Double-layered low-E glass",
+            "ceiling_height": 3.8,
+            "facade_complexity": "High-Parametric"
         }
-        return metadata
 
-    def generate_advanced_prompt(self, metadata, style="Modernism"):
-        """
-        Converts BIM metadata into high-fidelity AI rendering prompts.
-        We plan to utilize OpenAI Codex to optimize this mapping logic.
-        """
-        if style not in self.supported_styles:
-            style = "Modernism"
-            
-        base_prompt = f"Architectural photography of a {style} building. "
-        detail_prompt = f"Features {metadata['wall_material']} textures, {metadata['glazing_ratio']*100}% glass facade, "
-        env_prompt = f"set in a {metadata['environment']} at golden hour, cinematic lighting, 8k resolution."
-        
-        full_prompt = base_prompt + detail_prompt + env_prompt
-        return full_prompt
+class PromptEngine:
+    """将建筑数据转换为高质量的 AI 渲染提示词策略"""
+    def __init__(self, style="Modern Minimalism"):
+        self.style = style
 
-    def run_pipeline(self, ifc_file):
-        """Execute the full translation pipeline."""
-        print(f"--- Starting Pipeline for {self.project_name} ---")
-        metadata = self.extract_bim_metadata(ifc_file)
-        prompt = self.generate_advanced_prompt(metadata)
+    def build_rendering_strategy(self, data):
+        # AI 接入点：计划使用 OpenAI Codex 优化提示词的权重分布
+        # TODO: Integrate OpenAI API for dynamic linguistic optimization
+        base = f"Professional architectural photography of {self.style} building, "
+        details = f"materiality: {data['wall_material']}, glazing: {data['glazing_type']}. "
+        lighting = "Atmospheric dusk, cinematic volumetric lighting, 8k resolution, ArchDaily style."
+        return base + details + lighting
+
+class ArchToolkit:
+    def __init__(self):
+        print("--- Arch-Render AI Toolkit | System Active ---")
+        self.is_api_connected = False # 待接入 OpenAI Codex 授权
+
+    def run_task(self, filename):
+        print(f"[LOG] Processing: {filename}...")
+        parser = MetadataParser(filename)
+        data = parser.get_structural_data()
         
-        results = {
-            "source_file": ifc_file,
-            "generated_prompt": prompt,
-            "status": "Ready for Diffusion Model"
-        }
-        print(json.dumps(results, indent=4))
-        return results
+        engine = PromptEngine()
+        strategy = engine.build_rendering_strategy(data)
+        
+        print(f"[SUCCESS] Rendering Strategy Generated:")
+        print(f">>> {strategy}")
 
 if __name__ == "__main__":
-    # Test execution
-    engine = ArchAIEngine("Arch-Render-Project-V1")
-    engine.run_pipeline("sample_villa_model.ifc")
+    app = ArchToolkit()
+    app.run_task("project_model_v1.ifc")
