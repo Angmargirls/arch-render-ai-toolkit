@@ -1,0 +1,10 @@
+# 建筑数据处理
+ifcopenshell
+pyvista
+
+# AI 与后端
+openai
+python-dotenv
+
+# 图像处理（可选）
+Pillow
