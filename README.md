@@ -26,7 +26,7 @@ We are building a logic-driven engine that extracts spatial relationships and ma
 * **BIM Processing**: `ifcopenshell`, `pyvista`
 * **AI Integration**: OpenAI Codex / GPT-4 API
 * **Format Support**: IFC, OBJ, JSON
-
+[![Flag Counter](https://s01.flagcounter.com/count2/pQ54/bg_FFFFFF/txt_000000/border_CCCCCC/columns_2/maxflags_10/viewers_0/labels_0/pageviews_0/flags_0/percent_0/)](https://info.flagcounter.com/pQ54)
 ### 🤝 Contributing
 We welcome architects, developers, and AI enthusiasts to contribute. Please check the **Discussions** tab to share your ideas or report issues.
 
