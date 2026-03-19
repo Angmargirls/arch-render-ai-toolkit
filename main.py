@@ -57,3 +57,4 @@ if __name__ == "__main__":
     app = ArchToolkit()
     # 这里测试一下新加入的 obj 逻辑
     app.run_task("project_model_v1.obj")
+    # Planned for v0.2: Integration with specialized light-weighting rendering algorithms.
