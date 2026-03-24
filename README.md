@@ -27,3 +27,26 @@ We are building a logic-driven engine that extracts spatial relationships and ma
 * **AI Integration**: OpenAI Codex / GPT-4 API
 * **Format Support**: IFC, OBJ, JSON
 [![Flag Counter](https://s01.flagcounter.com/count2/pQ54/bg_FFFFFF/txt_000000/border_CCCCCC/columns_2/maxflags_10/viewers_3/labels_1/pageviews_1/flags_0/percent_0/)](https://info.flagcounter.com/pQ54)
+🗺️ Roadmap
+The arch-render-ai-toolkit aims to continuously bridge the gap between architectural data and generative AI.
+
+Phase 1: Core Foundation (Q1 - Q2 2026) [Active]
+[x] Implement initial metadata extraction for OBJ file formats.
+
+[ ] Expand support for IFC (Industry Foundation Classes) data parsing.
+
+[ ] Standardize geometry-to-text data mapping.
+
+Phase 2: AI-Powered Intelligence (Q3 2026) [Target: OpenAI API Integration]
+[ ] Integrate Codex/GPT-4 to automatically transform 3D metadata into professional architectural prompts.
+
+[ ] Develop an automated "Style Refiner" that suggests lighting and material prompts based on building typology.
+
+[ ] Implement BIM-aware prompt engineering to maintain design consistency across multiple views.
+
+Phase 3: Ecosystem & Plugins (Q4 2026 & Beyond)
+[ ] Release lightweight plugins for Rhino/Grasshopper and Revit.
+
+[ ] Enable cloud-based batch processing for large-scale architectural scenes.
+
+[ ] Build a community-driven library of architectural visualization "logic blocks."
